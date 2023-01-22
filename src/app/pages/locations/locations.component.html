@@ -1,0 +1,26 @@
+<table class="table">
+    <thead >
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Dimensión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations">
+        <th scope="row">
+            <mat-icon>public</mat-icon>
+        </th>
+        <td>{{location.name}}</td>
+        <td>{{location.type}}</td>
+        <td>{{location.dimension}}</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div style="height: 80px; margin-left: 60%; margin-top: 40px;">
+    <button type="button"(click)="prev()" *ngIf="pagina > 1"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <label>Página {{pagina}}  de  {{info.pages}}</label>
+    <button type="button"(click)="next()" *ngIf="pagina < info.pages"><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>

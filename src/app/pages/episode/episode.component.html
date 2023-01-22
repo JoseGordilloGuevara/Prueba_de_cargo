@@ -1,0 +1,26 @@
+<table class="table">
+    <thead >
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha de estreno</th>
+        <th scope="col">Episodio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let episode of episodes">
+        <th scope="row">
+        <mat-icon>live_tv</mat-icon>
+        </th>
+        <td>{{episode.name}}</td>
+        <td>{{episode.air_date}}</td>
+        <td>{{episode.episode}}</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div style="height: 80px; margin-left: 60%; margin-top: 40px;">
+    <button type="button"(click)="prev()" *ngIf="pagina > 1"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <label>Página {{pagina}}  de  {{info.pages}}</label>
+    <button type="button"(click)="next()" *ngIf="pagina < info.pages"><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>

@@ -1,0 +1,41 @@
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+ }
+
+table{
+    table-layout: fixed;
+    width: 70%;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    right: 20%;
+    top: 20px;
+}
+
+th, td {
+    width: 30%;
+    word-wrap: break-word;
+}
+
+.input_div{
+    display: flex;
+    flex-direction:column;
+  }
+  
+  .input_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  h1{
+    font-weight: bold; 
+    color: #014b40
+  }
+
+  h3{
+    font-weight: bold; 
+  }

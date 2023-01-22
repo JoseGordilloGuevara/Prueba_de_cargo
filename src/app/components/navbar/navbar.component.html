@@ -1,0 +1,30 @@
+<div class="example-container">
+    <mat-toolbar class="example-toolbar" style="background-color: #014b40; color: white;">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      
+      <button mat-icon-button class="button-left"><mat-icon> person_pin</mat-icon></button>
+      
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           >
+      <mat-sidenav #snav [mode]="'push'"
+                    >
+        <mat-nav-list>
+          <mat-icon style="font-size: 200px; height: 220px; width: 220px;">person_pin</mat-icon>
+          <mat-divider></mat-divider>
+          <a mat-list-item [routerLink]="nav.url" *ngFor="let nav of listaItems">{{nav.name}} 
+            <mat-divider></mat-divider>
+          </a>
+          
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+          <div style="min-height: 96vh; width: 100%;">
+            <router-outlet></router-outlet>
+          </div>
+       
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

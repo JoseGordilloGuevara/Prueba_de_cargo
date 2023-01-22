@@ -1,0 +1,39 @@
+<div style="top: 20px;left: 10%; right: 20%; width: 50%; position: relative;">
+<h1><mat-icon style="font-size: 30px; height: 30px; width: 30px;">zoom_in</mat-icon>Buscar</h1>
+<form class="form-inline my-2 my-lg-0">
+  <h3>Filtrar nombre</h3>
+  <input class="form-control mr-sm-2" type="search" name="filterName" placeholder="Escribe el nombre del personaje" aria-label="Search"
+  [(ngModel)]="filterName">
+  <h3 style="margin-top: 15px;">Filtrar tipo</h3>
+  <input class="form-control mr-sm-2" type="search" name="filterType" placeholder="Escribe el tipo del personaje" aria-label="Search"
+  [(ngModel)]="filterType">
+</form>
+</div>
+
+<table class="table" style="margin-top: 20px;">
+    <thead >
+      <tr style="background-color: #014b40; color: white;">
+        <th scope="col">Id</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters | filter:filterName | filter_Type:filterType"
+      [routerLink]="['/profile/' + character.id]">
+        <th scope="row">
+        {{character.id}}
+        </th>
+        <td><img src="{{character.image}} " alt="Avatar" class="avatar"></td>
+        <td>{{character.name}}</td>
+        <td>{{character.type}}</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div style="height: 80px; margin-left: 60%; margin-top: 40px;">
+    <button type="button"(click)="prev()" *ngIf="pagina > 1"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <label>Página {{pagina}}  de  {{info.pages}}</label>
+    <button type="button"(click)="next()" *ngIf="pagina < info.pages"><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>

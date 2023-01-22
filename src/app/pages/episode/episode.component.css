@@ -1,0 +1,14 @@
+table{
+    table-layout: fixed;
+    width: 70%;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    right: 20%;
+    top: 20px;
+}
+
+th, td {
+    width: 30%;
+    word-wrap: break-word;
+}
